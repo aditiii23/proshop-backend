@@ -2,6 +2,7 @@ import path from "path"
 import express from "express"
 import morgan from "morgan"
 import dotenv from "dotenv"
+import cors from "cors"
 import colors from "colors"
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
 import connectDB from "./config/db.js"
@@ -16,6 +17,7 @@ dotenv.config()
 connectDB()
 
 const app = express()
+app.use(cors())
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"))
