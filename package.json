@@ -8,13 +8,13 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node backend/server",
-    "server": "nodemon backend/server",
-    "client": "npm start --prefix backend",
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start",
     "dev": "npx concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node backend/seeder",
-    "data:destroy": "node backend/seeder -d",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix backend && npm run build --prefix backend"
+    "data:import": "node seeder",
+    "data:destroy": "node seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install  && npm run build "
   },
   "repository": {
     "type": "git",
