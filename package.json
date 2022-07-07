@@ -2,16 +2,19 @@
   "name": "pro_shop",
   "version": "1.0.0",
   "description": "MERN shopping cart app",
+  "engines": {
+    "node": "16.x"
+  },
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
-    "client": "npm start --prefix frontend",
+    "client": "npm start --prefix backend",
     "dev": "npx concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix backend && npm run build --prefix backend"
   },
   "repository": {
     "type": "git",
